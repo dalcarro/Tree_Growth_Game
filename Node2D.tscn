@@ -1,23 +1,37 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://friedrichstrasse-874084374.jpg" type="Texture" id=1]
 [ext_resource path="res://Cost.gd" type="Script" id=2]
 [ext_resource path="res://Description.gd" type="Script" id=3]
+[ext_resource path="res://Node2D.gd" type="Script" id=4]
+[ext_resource path="res://CormorantUpright-Regular.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 5 )
+fallback/0 = SubResource( 7 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 
 [sub_resource type="Theme" id=1]
 
-[node name="Control" type="Control"]
+[sub_resource type="CanvasItemMaterial" id=6]
+
+[node name="GameUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource( 5 )
+script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 67.0
+margin_bottom = -1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
@@ -34,237 +48,52 @@ margin_right = 0.607971
 margin_bottom = -1.60004
 rect_min_size = Vector2( 272.65, 142.299 )
 
-[node name="TabContainer" type="TabContainer" parent="build and details"]
-self_modulate = Color( 1, 1, 1, 0.745098 )
-anchor_left = -0.044
-anchor_right = 0.901
-anchor_bottom = 1.035
-margin_left = 0.0120001
-margin_top = -2.0
-margin_right = 0.0270233
-margin_bottom = 0.149994
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Tree Parts" type="ScrollContainer" parent="build and details/TabContainer"]
-self_modulate = Color( 1, 1, 1, 0.74902 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-scroll_horizontal_enabled = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="build and details/TabContainer/Tree Parts"]
-self_modulate = Color( 1, 1, 1, 0.745098 )
-margin_right = 250.0
-margin_bottom = 287.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Roots" type="Button" parent="build and details/TabContainer/Tree Parts/VBoxContainer"]
-self_modulate = Color( 0.956863, 0, 1, 0.745098 )
-margin_right = 250.0
-margin_bottom = 54.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Roots"
-expand_icon = true
-
-[node name="Trunk" type="Button" parent="build and details/TabContainer/Tree Parts/VBoxContainer"]
-self_modulate = Color( 0.956863, 0, 1, 0.745098 )
-margin_top = 58.0
-margin_right = 250.0
-margin_bottom = 112.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Trunks"
-expand_icon = true
-
-[node name="Branch" type="Button" parent="build and details/TabContainer/Tree Parts/VBoxContainer"]
-self_modulate = Color( 0.956863, 0, 1, 0.745098 )
-margin_top = 116.0
-margin_right = 250.0
-margin_bottom = 170.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Branch"
-expand_icon = true
-
-[node name="Leaf" type="Button" parent="build and details/TabContainer/Tree Parts/VBoxContainer"]
-self_modulate = Color( 0.956863, 0, 1, 0.745098 )
-margin_top = 174.0
-margin_right = 250.0
-margin_bottom = 228.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Leaf"
-expand_icon = true
-
-[node name="Buds" type="Button" parent="build and details/TabContainer/Tree Parts/VBoxContainer"]
-self_modulate = Color( 0.956863, 0, 1, 0.745098 )
-margin_top = 232.0
-margin_right = 250.0
-margin_bottom = 286.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Buds"
-expand_icon = true
-
-[node name="Resources" type="ScrollContainer" parent="build and details/TabContainer"]
-visible = false
-modulate = Color( 0.980392, 1, 0, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 30.125
-margin_bottom = 6.125
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = SubResource( 2 )
-scroll_horizontal_enabled = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="build and details/TabContainer/Resources"]
-margin_right = 250.0
-margin_bottom = 299.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Sugar" type="Button" parent="build and details/TabContainer/Resources/VBoxContainer"]
-self_modulate = Color( 1, 1, 1, 0.745098 )
-margin_right = 250.0
-margin_bottom = 147.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
-text = "Sugar"
-expand_icon = true
-
-[node name="Caffine" type="Button" parent="build and details/TabContainer/Resources/VBoxContainer"]
-self_modulate = Color( 1, 1, 1, 0.745098 )
-margin_top = 151.0
-margin_right = 250.0
-margin_bottom = 298.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 250, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
-text = "Caffine"
-expand_icon = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="build and details"]
+[node name="Description_Window" type="PanelContainer" parent="build and details"]
 modulate = Color( 0, 1, 0.121569, 1 )
 self_modulate = Color( 1, 1, 1, 0.760784 )
 anchor_left = -0.018
 anchor_top = -0.352
 anchor_right = 0.788
-anchor_bottom = -0.126
-margin_left = -0.0860004
-margin_top = 0.119995
+margin_left = -0.0860009
+margin_top = 0.120003
 margin_right = -0.123993
-margin_bottom = 0.0599976
+margin_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 1 )
 
-[node name="Description" type="RichTextLabel" parent="build and details/PanelContainer2"]
+[node name="Description" type="RichTextLabel" parent="build and details/Description_Window"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 213.0
-margin_bottom = 63.0
+margin_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 3 )
 
-[node name="PanelContainer" type="PanelContainer" parent="build and details"]
+[node name="Cost_Window" type="PanelContainer" parent="build and details"]
 self_modulate = Color( 1, 1, 1, 0.756863 )
-anchor_left = -0.040641
-anchor_top = 1.11281
-anchor_right = 0.725487
-anchor_bottom = 1.38087
+anchor_left = -0.029652
+anchor_top = 1.07732
+anchor_right = 0.736
+anchor_bottom = 1.452
 margin_left = 0.0949998
 margin_top = 0.0300293
-margin_right = -0.0579834
-margin_bottom = -0.0699768
+margin_right = 0.0719299
+margin_bottom = -33.1213
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Cost" type="RichTextLabel" parent="build and details/PanelContainer"]
+[node name="Cost" type="RichTextLabel" parent="build and details/Cost_Window"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 202.0
-margin_bottom = 75.9986
+margin_bottom = 75.9995
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -272,18 +101,18 @@ size_flags_vertical = 3
 scroll_active = false
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="build and details"]
+[node name="ID" type="Panel" parent="build and details"]
 self_modulate = Color( 0.909804, 0, 1, 0.756863 )
 anchor_left = -0.019
-anchor_top = -0.097
+anchor_top = 0.086
 anchor_right = 0.788
-anchor_bottom = -0.023
-margin_left = -0.813
-margin_top = 0.0699978
-margin_right = -0.123993
-margin_bottom = 0.13
+anchor_bottom = 0.16
+margin_left = -0.813001
+margin_top = 0.0859985
+margin_right = -0.124008
+margin_bottom = 0.145969
 
-[node name="Label" type="Label" parent="build and details/Panel"]
+[node name="ID" type="Label" parent="build and details/ID"]
 anchor_left = 0.023
 anchor_top = 0.087
 anchor_right = 1.0
@@ -301,6 +130,148 @@ custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.333333, 1, 1 )
 text = "Build Tree & Resources"
 align = 1
+
+[node name="Button_List" type="VBoxContainer" parent="build and details"]
+self_modulate = Color( 1, 1, 1, 0.745098 )
+anchor_left = 0.088
+anchor_top = 0.203
+anchor_right = 0.637
+anchor_bottom = 0.935
+margin_left = -0.0239964
+margin_top = 0.0700035
+margin_right = 0.0990143
+margin_bottom = 0.149994
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Roots" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+material = SubResource( 6 )
+margin_right = 150.0
+margin_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Roots"
+expand_icon = true
+
+[node name="Trunk" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+margin_top = 33.0
+margin_right = 150.0
+margin_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Trunks"
+expand_icon = true
+
+[node name="Branch" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+margin_top = 66.0
+margin_right = 150.0
+margin_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Branch"
+expand_icon = true
+
+[node name="Leaf" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+margin_top = 99.0
+margin_right = 150.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Leaf"
+expand_icon = true
+
+[node name="Buds" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+margin_top = 132.0
+margin_right = 150.0
+margin_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Buds"
+expand_icon = true
+
+[node name="Caffine" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 1, 0.807843, 0, 0.882353 )
+margin_top = 165.0
+margin_right = 150.0
+margin_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "Caffine"
+expand_icon = true
+
+[node name="Sugar" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 1, 0.807843, 0, 0.882353 )
+margin_top = 198.0
+margin_right = 150.0
+margin_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "Sugar"
+expand_icon = true
 
 [node name="End_Turn" type="Control" parent="."]
 anchor_left = 0.815
@@ -322,66 +293,177 @@ text = "End Turn"
 [node name="Stock_Pile" type="Control" parent="."]
 anchor_left = 0.825
 anchor_top = 0.055
-anchor_right = 0.973
-anchor_bottom = 0.818
+anchor_right = 0.976
+anchor_bottom = 0.518
 margin_left = 0.200012
-margin_right = 2.64801
+margin_right = -0.424072
 margin_bottom = 0.199982
 
-[node name="Stock_Label" type="Panel" parent="Stock_Pile"]
-anchor_left = 0.026
-anchor_top = -0.013
-anchor_right = 0.947
-anchor_bottom = 1.026
-margin_left = 0.0740609
-margin_top = -0.0459962
-margin_right = 0.00305176
-margin_bottom = 0.09198
+[node name="Stock_Panel" type="Panel" parent="Stock_Pile"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="Stock_Pile/Stock_Label"]
-anchor_right = 0.995
-anchor_bottom = 0.053
-margin_right = -0.054184
-margin_bottom = -0.228001
+[node name="Label" type="Label" parent="Stock_Pile/Stock_Panel"]
+anchor_top = 0.018
+anchor_right = 1.0
+anchor_bottom = 0.068
+margin_left = 2.0
+margin_top = -0.00400019
+margin_right = -1.0
+margin_bottom = 0.0959988
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.145098, 1, 1 )
 text = "Quantity  || Resource"
+align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Stock_Pile/Stock_Label"]
+[node name="Type" type="VBoxContainer" parent="Stock_Pile/Stock_Panel"]
 anchor_top = 0.076
-anchor_right = 0.5
+anchor_right = 0.985
 anchor_bottom = 1.0
-margin_top = -0.176003
-margin_right = -0.881493
+margin_left = 1.0
+margin_top = -0.128002
+margin_right = 0.309982
 
-[node name="Label" type="Label" parent="Stock_Pile/Stock_Label/VBoxContainer"]
-margin_right = 70.0
-margin_bottom = 30.0
+[node name="water" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_right = 150.0
+margin_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Water"
+align = 1
+valign = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Stock_Pile/Stock_Label"]
-anchor_left = 0.493
-anchor_top = 0.076
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 0.0327835
-margin_top = -0.176003
-margin_right = -1.84105
+[node name="Minerals" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 29.0
+margin_right = 150.0
+margin_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Minerals"
+align = 1
+valign = 1
 
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Roots" to="build and details/PanelContainer2/Description" method="_on_Roots_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Roots" to="build and details/PanelContainer/Cost" method="_on_Roots_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Trunk" to="build and details/PanelContainer2/Description" method="_on_Trunk_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Trunk" to="build and details/PanelContainer/Cost" method="_on_Trunk_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Branch" to="build and details/PanelContainer2/Description" method="_on_Branch_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Branch" to="build and details/PanelContainer/Cost" method="_on_Branch_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Leaf" to="build and details/PanelContainer2/Description" method="_on_Leaf_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Buds" to="build and details/PanelContainer2/Description" method="_on_Buds_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Tree Parts/VBoxContainer/Buds" to="build and details/PanelContainer/Cost" method="_on_Buds_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Resources/VBoxContainer/Sugar" to="build and details/PanelContainer2/Description" method="_on_Sugar_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Resources/VBoxContainer/Sugar" to="build and details/PanelContainer/Cost" method="_on_Sugar_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Resources/VBoxContainer/Caffine" to="build and details/PanelContainer2/Description" method="_on_Caffine_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/TabContainer/Resources/VBoxContainer/Caffine" to="build and details/PanelContainer/Cost" method="_on_Caffine_mouse_entered"]
+[node name="Sugar" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 58.0
+margin_right = 150.0
+margin_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Sugar"
+align = 1
+valign = 1
+
+[node name="Caffine" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 87.0
+margin_right = 150.0
+margin_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Caffine"
+align = 1
+valign = 1
+
+[node name="Trunk" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 116.0
+margin_right = 150.0
+margin_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Trunk"
+align = 1
+valign = 1
+
+[node name="Leaves" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 145.0
+margin_right = 150.0
+margin_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Leaves"
+align = 1
+valign = 1
+
+[node name="Roots" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 174.0
+margin_right = 150.0
+margin_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Roots"
+align = 1
+valign = 1
+
+[node name="Buds" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 203.0
+margin_right = 150.0
+margin_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buds"
+align = 1
+valign = 1
+
+[node name="Branchs" type="Label" parent="Stock_Pile/Stock_Panel/Type"]
+margin_top = 232.0
+margin_right = 150.0
+margin_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Branches"
+align = 1
+valign = 1
+
+[connection signal="mouse_entered" from="build and details/Button_List/Roots" to="build and details/Description_Window/Description" method="_on_Roots_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Roots" to="build and details/Cost_Window/Cost" method="_on_Roots_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Roots" to="." method="_on_Roots_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Trunk" to="build and details/Description_Window/Description" method="_on_Trunk_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Trunk" to="build and details/Cost_Window/Cost" method="_on_Trunk_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Trunk" to="." method="_on_Trunk_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Branch" to="build and details/Description_Window/Description" method="_on_Branch_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Branch" to="build and details/Cost_Window/Cost" method="_on_Branch_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Branch" to="." method="_on_Branch_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Leaf" to="build and details/Description_Window/Description" method="_on_Leaf_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Leaf" to="." method="_on_Leaf_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Buds" to="build and details/Description_Window/Description" method="_on_Buds_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Buds" to="build and details/Cost_Window/Cost" method="_on_Buds_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Buds" to="." method="_on_Buds_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Description_Window/Description" method="_on_Caffine_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Cost_Window/Cost" method="_on_Caffine_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Caffine" to="." method="_on_Caffine_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Sugar" to="build and details/Description_Window/Description" method="_on_Sugar_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Sugar" to="build and details/Cost_Window/Cost" method="_on_Sugar_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Sugar" to="." method="_on_Sugar_pressed"]
+[connection signal="pressed" from="End_Turn/end_turn" to="." method="_on_end_turn_pressed"]
