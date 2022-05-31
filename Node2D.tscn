@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://windows_xp_bliss.jpg" type="Texture" id=1]
 [ext_resource path="res://Cost.gd" type="Script" id=2]
@@ -7,16 +7,14 @@
 [ext_resource path="res://CormorantUpright-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://month_year.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFontData" id=7]
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 5 )
-fallback/0 = SubResource( 7 )
 
 [sub_resource type="Theme" id=5]
-default_font = SubResource( 4 )
+default_font = SubResource( 7 )
 
 [sub_resource type="Theme" id=1]
 
@@ -223,8 +221,8 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "Leaf"
 expand_icon = true
 
-[node name="Buds" type="Button" parent="build and details/Button_List"]
-self_modulate = Color( 0.956863, 0, 1, 0.882353 )
+[node name="Sugar" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 1, 0.807843, 0, 0.882353 )
 margin_top = 140.0
 margin_right = 150.0
 margin_bottom = 171.0
@@ -233,12 +231,12 @@ grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Buds"
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "Sugar"
 expand_icon = true
 
 [node name="Caffine" type="Button" parent="build and details/Button_List"]
@@ -259,8 +257,8 @@ custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
 text = "Caffine"
 expand_icon = true
 
-[node name="Sugar" type="Button" parent="build and details/Button_List"]
-self_modulate = Color( 1, 0.807843, 0, 0.882353 )
+[node name="Seeds" type="Button" parent="build and details/Button_List"]
+self_modulate = Color( 0.372549, 1, 0.376471, 1 )
 margin_top = 210.0
 margin_right = 150.0
 margin_bottom = 241.0
@@ -269,12 +267,12 @@ grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
-text = "Sugar"
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Seeds"
 expand_icon = true
 
 [node name="End_Turn" type="Control" parent="."]
@@ -324,7 +322,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
 
-[node name="Sugar" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+[node name="Water" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_right = 93.0
 margin_bottom = 26.0
 grow_horizontal = 2
@@ -332,11 +330,12 @@ grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Sugar"
+custom_colors/font_color = Color( 1, 0.807843, 0, 0.882353 )
+text = "Water"
 align = 1
 valign = 1
 
-[node name="Water" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+[node name="Roots" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_left = 97.0
 margin_right = 190.0
 margin_bottom = 26.0
@@ -344,8 +343,9 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
-size_flags_vertical = 7
-text = "Water"
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.972549, 0.403922, 1, 0.882353 )
+text = "Roots"
 align = 1
 valign = 1
 
@@ -358,11 +358,12 @@ grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 0.807843, 0, 0.882353 )
 text = "Minerals"
 align = 1
 valign = 1
 
-[node name="Caffine" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+[node name="Trunk" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_left = 97.0
 margin_top = 30.0
 margin_right = 190.0
@@ -372,11 +373,12 @@ grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Caffine"
+custom_colors/font_color = Color( 0.972549, 0.403922, 1, 0.882353 )
+text = "Trunk"
 align = 1
 valign = 1
 
-[node name="Trunk" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+[node name="Sugar" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_top = 60.0
 margin_right = 93.0
 margin_bottom = 86.0
@@ -385,52 +387,57 @@ grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Trunk"
+custom_colors/font_color = Color( 1, 0.807843, 0, 0.882353 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Sugar"
+align = 1
+valign = 1
+
+[node name="Branches" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+margin_left = 97.0
+margin_top = 60.0
+margin_right = 190.0
+margin_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.972549, 0.403922, 1, 0.882353 )
+text = "Branches"
+align = 1
+valign = 1
+
+[node name="Caffine" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+margin_top = 90.0
+margin_right = 93.0
+margin_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 0.807843, 0, 0.882353 )
+text = "Caffine"
 align = 1
 valign = 1
 
 [node name="Leaves" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_left = 97.0
-margin_top = 60.0
+margin_top = 90.0
 margin_right = 190.0
-margin_bottom = 86.0
+margin_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/font_color = Color( 0.972549, 0.403922, 1, 0.882353 )
 text = "Leaves"
 align = 1
 valign = 1
 
-[node name="Roots" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_top = 90.0
-margin_right = 93.0
-margin_bottom = 116.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Roots"
-align = 1
-valign = 1
-
-[node name="Buds" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_left = 97.0
-margin_top = 90.0
-margin_right = 190.0
-margin_bottom = 116.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Buds"
-align = 1
-valign = 1
-
-[node name="Branches" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
+[node name="Seeds" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
 margin_top = 120.0
 margin_right = 93.0
 margin_bottom = 146.0
@@ -439,7 +446,8 @@ grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Branches"
+custom_colors/font_color = Color( 0.372549, 1, 0.376471, 1 )
+text = "Seeds"
 align = 1
 valign = 1
 
@@ -473,12 +481,8 @@ margin_right = -0.328003
 margin_bottom = -0.200005
 
 [node name="Panel" type="Panel" parent="Control"]
-anchor_left = -0.24
-anchor_right = 1.24
-anchor_bottom = 1.25
-margin_left = 2.28882e-05
-margin_right = -3.05176e-05
-margin_bottom = 3.8147e-06
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="month_year" type="Label" parent="Control/Panel"]
 anchor_right = 1.0
@@ -502,21 +506,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Lives" type="Panel" parent="."]
-anchor_left = 0.669
+anchor_left = 0.674
 anchor_top = 0.033
 anchor_right = 0.766
-anchor_bottom = 0.25
-margin_left = -0.0560303
-margin_top = 0.199986
-margin_right = -0.384033
-
-[node name="lives_text" type="RichTextLabel" parent="Lives"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.087
+margin_left = -0.176025
+margin_top = 0.200001
+margin_right = -0.383972
+margin_bottom = -0.200005
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="lives_text" type="Label" parent="Lives"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
 
 [connection signal="mouse_entered" from="build and details/Button_List/Roots" to="build and details/Description_Window/Description" method="_on_Roots_mouse_entered"]
 [connection signal="mouse_entered" from="build and details/Button_List/Roots" to="build and details/Cost_Window/Cost" method="_on_Roots_mouse_entered"]
@@ -528,14 +535,15 @@ size_flags_vertical = 3
 [connection signal="mouse_entered" from="build and details/Button_List/Branch" to="build and details/Cost_Window/Cost" method="_on_Branch_mouse_entered"]
 [connection signal="pressed" from="build and details/Button_List/Branch" to="." method="_on_Branch_pressed"]
 [connection signal="mouse_entered" from="build and details/Button_List/Leaf" to="build and details/Description_Window/Description" method="_on_Leaf_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Leaf" to="build and details/Cost_Window/Cost" method="_on_Leaf_mouse_entered"]
 [connection signal="pressed" from="build and details/Button_List/Leaf" to="." method="_on_Leaf_pressed"]
-[connection signal="mouse_entered" from="build and details/Button_List/Buds" to="build and details/Description_Window/Description" method="_on_Buds_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/Button_List/Buds" to="build and details/Cost_Window/Cost" method="_on_Buds_mouse_entered"]
-[connection signal="pressed" from="build and details/Button_List/Buds" to="." method="_on_Buds_pressed"]
-[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Description_Window/Description" method="_on_Caffine_mouse_entered"]
-[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Cost_Window/Cost" method="_on_Caffine_mouse_entered"]
-[connection signal="pressed" from="build and details/Button_List/Caffine" to="." method="_on_Caffine_pressed"]
 [connection signal="mouse_entered" from="build and details/Button_List/Sugar" to="build and details/Description_Window/Description" method="_on_Sugar_mouse_entered"]
 [connection signal="mouse_entered" from="build and details/Button_List/Sugar" to="build and details/Cost_Window/Cost" method="_on_Sugar_mouse_entered"]
 [connection signal="pressed" from="build and details/Button_List/Sugar" to="." method="_on_Sugar_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Description_Window/Description" method="_on_Caffine_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Caffine" to="build and details/Cost_Window/Cost" method="_on_Caffine_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Caffine" to="." method="_on_Caffine_pressed"]
+[connection signal="mouse_entered" from="build and details/Button_List/Seeds" to="build and details/Description_Window/Description" method="_on_Buds_mouse_entered"]
+[connection signal="mouse_entered" from="build and details/Button_List/Seeds" to="build and details/Cost_Window/Cost" method="_on_Buds_mouse_entered"]
+[connection signal="pressed" from="build and details/Button_List/Seeds" to="." method="_on_Buds_pressed"]
 [connection signal="pressed" from="End_Turn/end_turn" to="." method="_on_end_turn_pressed"]

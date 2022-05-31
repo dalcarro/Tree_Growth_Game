@@ -1,38 +1,23 @@
 extends RichTextLabel
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_Roots_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 5 Sugar" )
 
 func _on_Trunk_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 50 sugar")
 
 func _on_Branch_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 25 sugar")
 
 func _on_Buds_mouse_entered():
-	self.set_text("Cost:")
-
-func _on_Water_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 75 sugar")
 
 func _on_Sugar_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 1 mineral & 1 water")
 
 func _on_Caffine_mouse_entered():
-	self.set_text("Cost:")
+	self.set_text("Cost: 1 sugar & 1 mineral")
+
+func _on_Leaf_mouse_entered():
+	self.set_text("Cost: 10 sugar")

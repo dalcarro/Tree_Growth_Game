@@ -1,17 +1,6 @@
 extends RichTextLabel
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _on_Roots_mouse_entered(): 
 	self.set_text("Generates minerals and water every turn")
 
@@ -25,16 +14,10 @@ func _on_Leaf_mouse_entered():
 	self.set_text("Generates sun")
 
 func _on_Buds_mouse_entered():
-	self.set_text("Generates minerals and water every turn")
-
-func _on_Water_mouse_entered():
-	self.set_text("Generates minerals and water every turn")
-
-func _on_Minerals_mouse_entered():
-	self.set_text("Generates minerals and water every turn")
+	self.set_text("Adds 1 to your score pure seed made")
 
 func _on_Sugar_mouse_entered():
-	self.set_text("Generates minerals and water every turn")
+	self.set_text("Used to grow tree parts and make Caffine")
 
 func _on_Caffine_mouse_entered():
-	self.set_text("Generates minerals and water every turn")
+	self.set_text("Used to repel insects and parasites")
