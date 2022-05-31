@@ -18,8 +18,7 @@ var cap = {
 	"sugar": 0,
 	"caff": 0,
 	"branches": 0,
-	"leaves": 0,
-	"sun": true
+	"leaves": 0
 }
 
 var made_this_month = {
@@ -64,7 +63,6 @@ func _ready():
 func _on_end_turn_pressed():
 	month_count += 1
 	next_month()
-	winter_toggle()
 	january_checker()
 	generate_resources()
 	update()
@@ -114,11 +112,6 @@ func con_log(arg_in : String):
 	get_node("console/console_log").add_text("\n \t" + arg_in)
 	
 
-func winter_toggle():
-	if month_count > 8 :
-		cap["sun"] = false
-	else:
-		cap["sun"] = true
 
 func prod_toggle_checker():
 	#checks if you built something when its not january 
@@ -136,52 +129,60 @@ func prod_toggle_checker():
 	
 func _on_Roots_pressed():
 	if prod_toggle_checker() == true: 
-		if play_in["sugar"] >= 5:
+		if play_in["sugar"] < 5:
+			con_log("not enough sugar to make roots")
+		else:
 			play_in["sugar"] -= 5
 			play_in["roots"] += 1
 			update()
-		else:
-			con_log("not enough sugar to make roots")
+			
 
 
 func _on_Trunk_pressed():
 	if prod_toggle_checker() == true:
-		if play_in["sugar"] >= 50:
+		if play_in["sugar"] < 50:
+			con_log("not enough sugar to make Trunk")
+		else:
 			play_in["sugar"] -= 50
 			play_in["trunk"] += 1
 			update()
-		else:
-			con_log("not enough sugar to make Trunk")
+			
 
 
 func _on_Branch_pressed():
 	if prod_toggle_checker() == true && cap["branches"] > made_this_month["branches"]:
-		if play_in["sugar"] >= 25:
+		if play_in["sugar"] < 25:
+			con_log("not enough sugar to make branches")
+		else:
 			play_in["sugar"] -= 25
 			play_in["branches"] += 1
 			update()
-		else:
-			con_log("not enough sugar to make branches")
 
 
 func _on_Leaf_pressed():
-	if prod_toggle_checker() == true && cap["leaves"] > made_this_month["leaves"]:
-		if play_in["sugar"] >= 10: 
+	if prod_toggle_checker() == true:  
+		if cap["leaves"] == made_this_month["leaves"]:
+			con_log("leaf cap reached. build more branches")
+		elif play_in["sugar"] < 10:
+			con_log("not enough sugar to make branches")
+		else: 
 			play_in["sugar"] -= 10
 			play_in["leaves"] += 1
 			update()
-		else:
-			con_log("not enough sugar to make branches")
+			
 
 
 func _on_Buds_pressed():
 	if prod_toggle_checker() == true:
-		if play_in["sugar"] >= 15:
+		if cap["seeds"] == made_this_month["seeds"]:
+			con_log("seed cap reached. build more leaves")
+		elif play_in["sugar"] < 15:
+			con_log("not enough sugar to make seeds")
+		else:
 			play_in["sugar"] -= 15
 			play_in["seeds"] += 1
 			update()
-		else:
-			con_log("not enough sugar to make seeds")
+
 
 
 func _on_Caffine_pressed():
@@ -197,7 +198,11 @@ func _on_Caffine_pressed():
 
 func _on_Sugar_pressed():
 	if prod_toggle_checker() == true:
-		if play_in["water"] < 1 || play_in["minerals"] < 1 :
+		if cap["leaves"] == made_this_month["leaves"]:
+			con_log("sugar cap reached. build more leaves")
+		if month_count <= 8:
+			con_log("It is winter, there is not enough sun")
+		elif play_in["water"] < 1 || play_in["minerals"] < 1 :
 			con_log("not enough resources to make sugar")
 		else:
 			play_in["water"] -= 1
