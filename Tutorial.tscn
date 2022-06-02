@@ -1,0 +1,202 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://tutorial_background.png" type="Texture" id=1]
+[ext_resource path="res://Tutorial.gd" type="Script" id=2]
+[ext_resource path="res://CormorantUpright-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 6 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="descrip_box" type="ColorRect" parent="."]
+anchor_left = 0.025
+anchor_top = 0.031
+anchor_right = 0.28
+anchor_bottom = 0.233
+margin_left = -13.0
+margin_top = 0.519997
+margin_right = -12.6
+margin_bottom = 1.35999
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="cost_box" type="ColorRect" parent="."]
+anchor_left = 0.017
+anchor_top = 0.771
+anchor_right = 0.272
+anchor_bottom = 0.974
+margin_left = -0.640003
+margin_top = 0.319946
+margin_right = -0.240051
+margin_bottom = 0.0799561
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="build_box" type="ColorRect" parent="."]
+anchor_left = 0.025
+anchor_top = 0.248
+anchor_right = 0.272
+anchor_bottom = 0.752
+margin_left = -16.0
+margin_top = 0.159973
+margin_right = -0.240051
+margin_bottom = -0.160034
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="stock_box" type="ColorRect" parent="."]
+anchor_left = 0.781
+anchor_top = 0.015
+anchor_right = 0.991
+anchor_bottom = 0.343
+margin_left = 0.47998
+margin_top = -0.200001
+margin_right = 0.279907
+margin_bottom = -0.440033
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="turn_button" type="ColorRect" parent="."]
+anchor_left = 0.795
+anchor_top = 0.873
+anchor_right = 0.993
+anchor_bottom = 0.98
+margin_left = 0.599976
+margin_top = 0.159973
+margin_right = 0.439941
+margin_bottom = -0.400024
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="clock_box" type="ColorRect" parent="."]
+anchor_left = 0.401
+anchor_top = -0.01
+anchor_right = 0.599
+anchor_bottom = 0.096
+margin_left = 0.0799561
+margin_top = -0.199999
+margin_right = -0.0800781
+margin_bottom = 0.32
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="lives_box" type="ColorRect" parent="."]
+anchor_left = 0.67
+anchor_top = 0.021
+anchor_right = 0.769
+anchor_bottom = 0.094
+margin_left = -0.400024
+margin_top = 0.319998
+margin_right = -0.480103
+margin_bottom = -0.520004
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="console_box" type="ColorRect" parent="."]
+anchor_left = 0.767
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.854
+margin_left = -0.640015
+margin_top = -3.05176e-05
+margin_right = -7.0
+margin_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0 )
+
+[node name="tut_panel" type="Panel" parent="."]
+anchor_left = 0.323
+anchor_top = 0.17
+anchor_right = 0.677
+anchor_bottom = 0.82
+margin_left = -0.159973
+margin_top = 0.399994
+margin_right = 0.159912
+margin_bottom = 10.4
+
+[node name="tut_log" type="RichTextLabel" parent="tut_panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="back" type="Button" parent="."]
+anchor_left = 0.342
+anchor_top = 0.844
+anchor_right = 0.433
+anchor_bottom = 0.991
+margin_left = -0.640015
+margin_top = -3.52002
+margin_right = 7.63995
+margin_bottom = -0.280029
+theme = SubResource( 2 )
+text = "<"
+expand_icon = true
+
+[node name="forward" type="Button" parent="."]
+anchor_left = 0.559
+anchor_top = 0.854
+anchor_right = 0.654
+anchor_bottom = 0.959
+margin_left = 0.719971
+margin_top = -21.32
+margin_right = 1.31995
+margin_bottom = 27.2799
+theme = SubResource( 4 )
+text = ">"
+expand_icon = true
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="forward" to="." method="_on_forward_pressed"]

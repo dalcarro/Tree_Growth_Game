@@ -1,11 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://windows_xp_bliss.jpg" type="Texture" id=1]
+[ext_resource path="res://tree_background.png" type="Texture" id=1]
 [ext_resource path="res://Cost.gd" type="Script" id=2]
 [ext_resource path="res://Description.gd" type="Script" id=3]
 [ext_resource path="res://Node2D.gd" type="Script" id=4]
 [ext_resource path="res://CormorantUpright-Regular.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://month_year.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
@@ -19,6 +18,25 @@ default_font = SubResource( 7 )
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=6]
+
+[sub_resource type="GDScript" id=8]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -69,8 +87,8 @@ theme = SubResource( 1 )
 [node name="Description" type="RichTextLabel" parent="build and details/Description_Window"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 213.0
-margin_bottom = 96.0
+margin_right = 405.099
+margin_bottom = 183.69
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -94,8 +112,8 @@ __meta__ = {
 [node name="Cost" type="RichTextLabel" parent="build and details/Cost_Window"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 202.0
-margin_bottom = 75.9995
+margin_right = 384.482
+margin_bottom = 169.34
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -152,8 +170,8 @@ size_flags_vertical = 3
 [node name="Roots" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 0.956863, 0, 1, 0.882353 )
 material = SubResource( 6 )
-margin_right = 150.0
-margin_bottom = 31.0
+margin_right = 280.0
+margin_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -169,9 +187,9 @@ expand_icon = true
 
 [node name="Trunk" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 0.956863, 0, 1, 0.882353 )
-margin_top = 35.0
-margin_right = 150.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 280.0
+margin_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -187,9 +205,9 @@ expand_icon = true
 
 [node name="Branch" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 0.956863, 0, 1, 0.882353 )
-margin_top = 70.0
-margin_right = 150.0
-margin_bottom = 101.0
+margin_top = 118.0
+margin_right = 280.0
+margin_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -205,9 +223,9 @@ expand_icon = true
 
 [node name="Leaf" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 0.956863, 0, 1, 0.882353 )
-margin_top = 105.0
-margin_right = 150.0
-margin_bottom = 136.0
+margin_top = 177.0
+margin_right = 280.0
+margin_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -223,9 +241,9 @@ expand_icon = true
 
 [node name="Sugar" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 1, 0.807843, 0, 0.882353 )
-margin_top = 140.0
-margin_right = 150.0
-margin_bottom = 171.0
+margin_top = 236.0
+margin_right = 280.0
+margin_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -241,9 +259,9 @@ expand_icon = true
 
 [node name="Caffine" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 1, 0.807843, 0, 0.882353 )
-margin_top = 175.0
-margin_right = 150.0
-margin_bottom = 206.0
+margin_top = 295.0
+margin_right = 280.0
+margin_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -259,9 +277,9 @@ expand_icon = true
 
 [node name="Seeds" type="Button" parent="build and details/Button_List"]
 self_modulate = Color( 0.372549, 1, 0.376471, 1 )
-margin_top = 210.0
-margin_right = 150.0
-margin_bottom = 241.0
+margin_top = 354.0
+margin_right = 280.0
+margin_bottom = 409.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 150, 15 )
@@ -286,6 +304,7 @@ margin_right = -0.424072
 margin_bottom = -6.10352e-05
 
 [node name="end_turn" type="Button" parent="End_Turn"]
+self_modulate = Color( 1, 0.364706, 0.439216, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -303,6 +322,7 @@ margin_right = -0.424011
 margin_bottom = 0.199982
 
 [node name="Stock_Panel" type="Panel" parent="Stock_Pile"]
+self_modulate = Color( 0, 0.240027, 1, 0.67 )
 anchor_right = 1.0
 anchor_bottom = 1.299
 margin_left = 4.0
@@ -323,8 +343,8 @@ size_flags_vertical = 3
 columns = 2
 
 [node name="Water" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_right = 93.0
-margin_bottom = 26.0
+margin_right = 176.0
+margin_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -336,9 +356,9 @@ align = 1
 valign = 1
 
 [node name="Roots" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_left = 97.0
-margin_right = 190.0
-margin_bottom = 26.0
+margin_left = 180.0
+margin_right = 356.0
+margin_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -350,9 +370,9 @@ align = 1
 valign = 1
 
 [node name="Minerals" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_top = 30.0
-margin_right = 93.0
-margin_bottom = 56.0
+margin_top = 58.0
+margin_right = 176.0
+margin_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -364,10 +384,10 @@ align = 1
 valign = 1
 
 [node name="Trunk" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_left = 97.0
-margin_top = 30.0
-margin_right = 190.0
-margin_bottom = 56.0
+margin_left = 180.0
+margin_top = 58.0
+margin_right = 356.0
+margin_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -379,9 +399,9 @@ align = 1
 valign = 1
 
 [node name="Sugar" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_top = 60.0
-margin_right = 93.0
-margin_bottom = 86.0
+margin_top = 116.0
+margin_right = 176.0
+margin_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -394,10 +414,10 @@ align = 1
 valign = 1
 
 [node name="Branches" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_left = 97.0
-margin_top = 60.0
-margin_right = 190.0
-margin_bottom = 86.0
+margin_left = 180.0
+margin_top = 116.0
+margin_right = 356.0
+margin_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -409,9 +429,9 @@ align = 1
 valign = 1
 
 [node name="Caffine" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_top = 90.0
-margin_right = 93.0
-margin_bottom = 116.0
+margin_top = 174.0
+margin_right = 176.0
+margin_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -423,10 +443,10 @@ align = 1
 valign = 1
 
 [node name="Leaves" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_left = 97.0
-margin_top = 90.0
-margin_right = 190.0
-margin_bottom = 116.0
+margin_left = 180.0
+margin_top = 174.0
+margin_right = 356.0
+margin_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -438,9 +458,9 @@ align = 1
 valign = 1
 
 [node name="Seeds" type="Label" parent="Stock_Pile/Stock_Panel/resources"]
-margin_top = 120.0
-margin_right = 93.0
-margin_bottom = 146.0
+margin_top = 232.0
+margin_right = 176.0
+margin_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 0, 25 )
@@ -489,9 +509,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 align = 1
 valign = 1
-script = ExtResource( 6 )
+script = SubResource( 8 )
 
 [node name="console" type="Panel" parent="."]
+self_modulate = Color( 100, 0, 60.19, 0.35 )
 anchor_left = 0.786
 anchor_top = 0.348
 anchor_right = 0.979
@@ -500,6 +521,10 @@ margin_left = 0.135986
 margin_top = 0.199982
 margin_right = 0.503967
 margin_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="console_log" type="RichTextLabel" parent="console"]
 anchor_right = 1.0

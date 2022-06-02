@@ -11,12 +11,18 @@ config_version=4
 [application]
 
 config/name="Tree_Growth_Game"
-run/main_scene="res://Node2D.tscn"
+run/main_scene="res://main_menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [gdnative]
 
 singletons=[ "res://addons/qoi/qoi.gdnlib" ]
+singletons_disabled=[ "res://addons/qoi/qoi.gdnlib" ]
 
 [physics]
 
