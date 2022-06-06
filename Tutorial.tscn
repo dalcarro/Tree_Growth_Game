@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://tutorial_background.png" type="Texture" id=1]
 [ext_resource path="res://Tutorial.gd" type="Script" id=2]
@@ -12,19 +12,231 @@ font_data = ExtResource( 3 )
 [sub_resource type="Theme" id=6]
 default_font = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=1]
-size = 128
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 128
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("descrip_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("console_box:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("lives_box:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("clock_box:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("stock_box:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("build_box:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("cost_box:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("turn_button:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "build_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("build_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "clock_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("clock_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "console_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("console_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "cost_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("cost_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "descrip_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("descrip_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "lives_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("lives_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "stock_box_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("stock_box:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "turn_button_red"
+tracks/0/type = "value"
+tracks/0/path = NodePath("turn_button:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.392157 ) ]
+}
 
 [node name="Tutorial" type="Control"]
 anchor_right = 1.0
@@ -39,14 +251,14 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="descrip_box" type="ColorRect" parent="."]
-anchor_left = 0.025
-anchor_top = 0.031
-anchor_right = 0.28
-anchor_bottom = 0.233
-margin_left = -13.0
-margin_top = 0.519997
-margin_right = -12.6
-margin_bottom = 1.35999
+anchor_left = 0.039
+anchor_top = 0.041
+anchor_right = 0.252
+anchor_bottom = 0.197
+margin_left = -0.880005
+margin_top = -0.280003
+margin_right = 0.160004
+margin_bottom = 16.24
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -54,14 +266,14 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 0 )
 
 [node name="cost_box" type="ColorRect" parent="."]
-anchor_left = 0.017
-anchor_top = 0.771
-anchor_right = 0.272
-anchor_bottom = 0.974
-margin_left = -0.640003
-margin_top = 0.319946
-margin_right = -0.240051
-margin_bottom = 0.0799561
+anchor_left = 0.035
+anchor_top = 0.792
+anchor_right = 0.238
+anchor_bottom = 0.958
+margin_left = -0.199997
+margin_top = -0.360046
+margin_right = 0.039978
+margin_bottom = 0.359985
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -69,14 +281,14 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 0 )
 
 [node name="build_box" type="ColorRect" parent="."]
-anchor_left = 0.025
-anchor_top = 0.248
-anchor_right = 0.272
-anchor_bottom = 0.752
-margin_left = -16.0
-margin_top = 0.159973
-margin_right = -0.240051
-margin_bottom = -0.160034
+anchor_left = 0.035
+anchor_top = 0.267
+anchor_right = 0.255
+anchor_bottom = 0.726
+margin_left = 0.800003
+margin_top = -0.360016
+margin_right = -0.600037
+margin_bottom = -0.0800171
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -99,14 +311,14 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 0 )
 
 [node name="turn_button" type="ColorRect" parent="."]
-anchor_left = 0.795
-anchor_top = 0.873
-anchor_right = 0.993
-anchor_bottom = 0.98
-margin_left = 0.599976
-margin_top = 0.159973
-margin_right = 0.439941
-margin_bottom = -0.400024
+anchor_left = 0.817
+anchor_top = 0.881
+anchor_right = 0.978
+anchor_bottom = 0.966
+margin_left = -0.640015
+margin_top = -0.480042
+margin_right = -0.760132
+margin_bottom = -0.280029
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -148,10 +360,10 @@ anchor_left = 0.767
 anchor_top = 0.35
 anchor_right = 1.0
 anchor_bottom = 0.854
-margin_left = -0.640015
-margin_top = -3.05176e-05
-margin_right = -7.0
-margin_bottom = -0.320007
+margin_left = 40.36
+margin_top = 49.0
+margin_right = -36.0
+margin_bottom = -0.319946
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -172,31 +384,43 @@ margin_bottom = 10.4
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="back" type="Button" parent="."]
-anchor_left = 0.342
-anchor_top = 0.844
-anchor_right = 0.433
-anchor_bottom = 0.991
-margin_left = -0.640015
-margin_top = -3.52002
-margin_right = 7.63995
-margin_bottom = -0.280029
-theme = SubResource( 2 )
-text = "<"
-expand_icon = true
-
 [node name="forward" type="Button" parent="."]
-anchor_left = 0.559
-anchor_top = 0.854
-anchor_right = 0.654
-anchor_bottom = 0.959
-margin_left = 0.719971
-margin_top = -21.32
-margin_right = 1.31995
-margin_bottom = 27.2799
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -91.4999
+margin_top = -162.0
+margin_right = 91.4999
 theme = SubResource( 4 )
-text = ">"
+text = "back"
 expand_icon = true
 
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/build_box_red = SubResource( 12 )
+anims/clock_box_red = SubResource( 11 )
+anims/console_box_red = SubResource( 9 )
+anims/cost_box_red = SubResource( 13 )
+anims/descrip_box_red = SubResource( 8 )
+anims/lives_box_red = SubResource( 10 )
+anims/stock_box_red = SubResource( 14 )
+anims/turn_button_red = SubResource( 15 )
+
+[connection signal="mouse_entered" from="descrip_box" to="." method="_on_descrip_box_mouse_entered"]
+[connection signal="mouse_exited" from="descrip_box" to="." method="_on_descrip_box_mouse_exited"]
+[connection signal="mouse_entered" from="cost_box" to="." method="_on_cost_box_mouse_entered"]
+[connection signal="mouse_exited" from="cost_box" to="." method="_on_cost_box_mouse_exited"]
+[connection signal="mouse_entered" from="build_box" to="." method="_on_build_box_mouse_entered"]
+[connection signal="mouse_exited" from="build_box" to="." method="_on_build_box_mouse_exited"]
+[connection signal="mouse_entered" from="stock_box" to="." method="_on_stock_box_mouse_entered"]
+[connection signal="mouse_exited" from="stock_box" to="." method="_on_stock_box_mouse_exited"]
+[connection signal="mouse_entered" from="turn_button" to="." method="_on_turn_button_mouse_entered"]
+[connection signal="mouse_exited" from="turn_button" to="." method="_on_turn_button_mouse_exited"]
+[connection signal="mouse_entered" from="clock_box" to="." method="_on_clock_box_mouse_entered"]
+[connection signal="mouse_exited" from="clock_box" to="." method="_on_clock_box_mouse_exited"]
+[connection signal="mouse_entered" from="lives_box" to="." method="_on_lives_box_mouse_entered"]
+[connection signal="mouse_exited" from="lives_box" to="." method="_on_lives_box_mouse_exited"]
+[connection signal="mouse_entered" from="console_box" to="." method="_on_console_box_mouse_entered"]
+[connection signal="mouse_exited" from="console_box" to="." method="_on_console_box_mouse_exited"]
 [connection signal="pressed" from="forward" to="." method="_on_forward_pressed"]

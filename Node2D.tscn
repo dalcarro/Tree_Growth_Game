@@ -529,6 +529,7 @@ size_flags_vertical = 3
 [node name="console_log" type="RichTextLabel" parent="console"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+scroll_following = true
 
 [node name="Lives" type="Panel" parent="."]
 anchor_left = 0.674
